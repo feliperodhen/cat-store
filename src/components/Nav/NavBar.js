@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BurgerNav } from './BurgerNav';
+import { CartWidget } from './CartWidget';
 
 
     
@@ -10,19 +11,13 @@ import { BurgerNav } from './BurgerNav';
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
-
-    .logo {
-        padding: 15px 0;
-    }
     `;
     export const NavBar = () => {
 
 
     return (
         <Nav>
-            <div className="logo">
-                cat-store
-            </div>
+            <CartWidget />
             <BurgerNav /> 
         </Nav>
     )
