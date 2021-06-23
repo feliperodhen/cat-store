@@ -1,21 +1,16 @@
 import styled from 'styled-components';
-import logo from '../../assets/img/cat-paw.svg'
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const CartImg = styled.div`
+display:flex;
+align-self: center;
 
-display: flex;
-align-items: center;
+@media (max-width: 768px) {
+color:white;
+align-self:flex-start;
+}
 
-
-.logo {
-        padding: 15px 0;
-        width: 40px;
-    }
-
-    p{
-            padding: 15px 15px;
-            font-weight: 600;
-        }
 `;
 
 
@@ -24,8 +19,7 @@ align-items: center;
 
     return (
             <CartImg>
-                <img src={logo} className="logo" />
-                <p>cat-store</p>
+<FontAwesomeIcon icon={faShoppingCart} />
             </CartImg>
     )
 }

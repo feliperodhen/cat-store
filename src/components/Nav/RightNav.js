@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CartWidget } from './CartWidget';
 
 
     
@@ -40,6 +41,7 @@ import styled from 'styled-components';
                 <li><a href="#">Nosotros</a></li>
                 <li><a href="#">Gatos</a></li>
                 <li><a href="#">Contacto</a></li>
+                <CartWidget />
             </Ul>
     )
 }
