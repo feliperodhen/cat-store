@@ -21,7 +21,7 @@ const Contador = styled.div`
   & > * {
     border: none;
     background-color: white;
-    box-shadow: 0px 0px 10px $clr-gray200;
+    box-shadow: 0px 0px 10px gray;
     font-weight: bold;
     font-size: 1rem;
     color: inherit;
@@ -33,7 +33,7 @@ const Contador = styled.div`
     transition: background-color 250ms ease-in-out, transform 50ms ease-in-out;
 
     &:hover {
-      background-color: $clr-gray200;
+      background-color: gray;
     }
 
     &:active {
@@ -41,7 +41,7 @@ const Contador = styled.div`
     }
 
     &:focus {
-      box-shadow: 0 0 0 3px $clr-gray500;
+      box-shadow: 0 0 0 3px gray;
     }
   }
 }
