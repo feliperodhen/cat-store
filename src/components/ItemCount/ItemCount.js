@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+const ButtonAgregar = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  margin: 0 1em;
+  padding: 0.25em 1em;
+  :disabled {
+    border: 2px solid grey;
+    color: grey;
+}
+`;
+
 
 const Contador = styled.div`
   display: flex;
@@ -76,7 +89,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
           <button disabled={count === initial} onClick={() => setCount(count - 1)}>-</button>
           <button disabled={count === stock} onClick={() => setCount(count + 1)}>+</button>
         </div>
-        <button disabled={count < initial}>Agregar al carrito</button>
+        <ButtonAgregar disabled={count < initial}>Agregar al carrito</ButtonAgregar>
       </Contador>
     );
   };
