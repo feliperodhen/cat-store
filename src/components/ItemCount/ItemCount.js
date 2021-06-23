@@ -12,6 +12,9 @@ const ButtonAgregar = styled.button`
     border: 2px solid grey;
     color: grey;
 }
+:hover {
+    pointer
+}
 `;
 
 
@@ -86,7 +89,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
           {count}
         </h1>
         <div className="button__wrapper">
-          <button disabled={count === initial} onClick={() => setCount(count - 1)}>-</button>
+          <button disabled={count === 0} onClick={() => setCount(count - 1)}>-</button>
           <button disabled={count === stock} onClick={() => setCount(count + 1)}>+</button>
         </div>
         <ButtonAgregar disabled={count < initial}>Agregar al carrito</ButtonAgregar>
