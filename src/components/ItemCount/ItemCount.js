@@ -65,7 +65,7 @@ const Contador = styled.div`
 
 
 export const ItemCount = ({stock, initial, onAdd}) => {
-    const [count, setCount] = useState(initial);
+    const [count, setCount] = useState(0);
 
     return (
         <Contador>
@@ -76,7 +76,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
           <button disabled={count === initial} onClick={() => setCount(count - 1)}>-</button>
           <button disabled={count === stock} onClick={() => setCount(count + 1)}>+</button>
         </div>
-        <button>Agregar al carrito</button>
+        <button disabled={count < initial}>Agregar al carrito</button>
       </Contador>
     );
   };
