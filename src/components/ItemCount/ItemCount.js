@@ -12,6 +12,9 @@ const ButtonAgregar = styled.button`
     border: 2px solid grey;
     color: grey;
 }
+:enabled{
+  cursor: pointer;
+}
 
 `;
 
@@ -63,6 +66,7 @@ const Contador = styled.div`
 .positive {
   color: pink;
   animation: pulse 500ms ease-in-out;
+ 
 }
 
 @keyframes pulse {
@@ -90,7 +94,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
           <button disabled={count === 0} onClick={() => setCount(count - 1)}>-</button>
           <button disabled={count === stock} onClick={() => setCount(count + 1)}>+</button>
         </div>
-        <ButtonAgregar disabled={count < initial}>Agregar al carrito</ButtonAgregar>
+        <ButtonAgregar disabled={count < initial} onClick={()=> onAdd()}>Agregar al carrito</ButtonAgregar>
       </Contador>
     );
   };

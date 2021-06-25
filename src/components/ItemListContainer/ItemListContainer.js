@@ -5,6 +5,11 @@ import { ItemList } from '../ItemList/ItemList'
 
 
 export const ItemListContainer = () => {
+
+  function alertGatitos (){
+    alert("gatitos agregados a la canasta")
+  }
+
         const [gatos, setGatos] = useState("buscando gatitos...");
         useEffect(() => {
             const items = [{
@@ -35,7 +40,7 @@ export const ItemListContainer = () => {
     return(
         <>
             <ItemList items={gatos}/>
-            <ItemCount stock={5} initial={1} onAdd/>
+            <ItemCount stock={5} initial={1} onAdd={alertGatitos} />
             
         </>
     )
