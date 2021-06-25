@@ -12,9 +12,7 @@ const ButtonAgregar = styled.button`
     border: 2px solid grey;
     color: grey;
 }
-:hover {
-    pointer
-}
+
 `;
 
 
