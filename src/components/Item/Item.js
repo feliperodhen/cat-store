@@ -12,7 +12,6 @@ export const Item = ({item})  => {
         <div key={item.id}>
             <Imgcard src={item.imgUrl} />
             <p>Name: {item.name }</p>
-            <p>Temperament: {item.temperament }</p>
         </div>
   ); 
 }

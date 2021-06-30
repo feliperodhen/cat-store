@@ -22,7 +22,7 @@ const ButtonAgregar = styled.button`
 const Contador = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 2rem;
   

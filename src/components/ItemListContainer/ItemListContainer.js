@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import { ItemCount } from '../ItemCount/ItemCount'
 import { ItemList } from '../ItemList/ItemList'
+import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer'
 
 
 
 export const ItemListContainer = () => {
 
-  function alertGatitos (){
-    alert("gatitos agregados a la canasta")
-  }
+
 
         const [gatos, setGatos] = useState("buscando gatitos...");
         useEffect(() => {
             const items = [{
                 id: '1', 
                 name: "British Shorthair", 
-                imgUrl: "https://cdn2.thecatapi.com/images/v104en-YP.jpg",
-                temperament:  "Loyal"},
+                imgUrl: "https://cdn2.thecatapi.com/images/v104en-YP.jpg"},
                 {
                   id: '2', 
                   name: "Nebelung", 
-                  imgUrl: "https://cdn2.thecatapi.com/images/GwRBXx7-w.jpg",
-                  temperament:  "Shy"}
+                  imgUrl: "https://cdn2.thecatapi.com/images/GwRBXx7-w.jpg"}
             ]
         const getGatos = new Promise((resolve, reject) => {
             setTimeout(function(){ 
@@ -39,9 +35,8 @@ export const ItemListContainer = () => {
 
     return(
         <>
-            <ItemList items={gatos}/>
-            <ItemCount stock={5} initial={1} onAdd={alertGatitos} />
-            
+           
+            <ItemDetailContainer items={gatos}/>
         </>
     )
 }

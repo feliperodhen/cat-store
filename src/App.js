@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <NavBar></NavBar>
-      <ItemListContainer title={titlePage} />
+      <ItemListContainer title={titlePage}/>
     </div>
   );
 }
