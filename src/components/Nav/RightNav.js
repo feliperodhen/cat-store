@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 import { CartWidget } from './CartWidget';
+import { Link } from 'react-router-dom';
 
 
     
-    const Ul = styled.ul`
+    const Navigator = styled.div`
     
         list-style: none;
         display: flex;
         flex-flow: row nowrap;
 
-        li{
+       
+        a{
             padding: 18px 10px;
         }
 
@@ -25,7 +27,7 @@ import { CartWidget } from './CartWidget';
             padding-top: 3.5rem;
             transition: transform 0.3s ease-in-out;
 
-            li{
+            a{
                 color:#fff;
             }
 
@@ -36,12 +38,11 @@ import { CartWidget } from './CartWidget';
     export const RightNav = ({ open }) => {
 
     return (
-            <Ul open={open}>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Gatos</a></li>
-                <li><a href="#">Contacto</a></li>
+            <Navigator open={open}>
+                <Link  to={'/'}>Inicio</Link>
+                <Link  to={'/category/pelocorto'}>Gatito Pelo Corto</Link>
+                <Link  to={'/category/pelolargo'}>Gatito Pelo Largo</Link>
                 <CartWidget />
-            </Ul>
+            </Navigator>
     )
 }

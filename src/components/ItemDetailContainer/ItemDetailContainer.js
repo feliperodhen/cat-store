@@ -1,25 +1,36 @@
 import React, {useEffect, useState} from 'react';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
+import styled from 'styled-components';
+import { useParams } from 'react-router';
 
+
+const CargandoPromesa = styled.p`
+text-align:center;
+`;
 
 export const ItemDetailContainer = () => {
+
+    const { id } = useParams();
 
     const [ItemShow, setItemShow] = useState();
 
 
-    const itemsDetails = [{
-        id: '1', 
-        name: "British Shorthair", 
-        imgUrl: "https://cdn2.thecatapi.com/images/v104en-YP.jpg",
-        temperament:  "Loyal"},
-        {
-          id: '2', 
-          name: "Nebelung", 
-          imgUrl: "https://cdn2.thecatapi.com/images/GwRBXx7-w.jpg",
-          temperament:  "Shy"}
-    ]
+   
 
     useEffect(() => {
+        const itemsDetails = [{
+            id: '1', 
+            name: "British Shorthair", 
+            category: "pelocorto",
+            imgUrl: "https://cdn2.thecatapi.com/images/v104en-YP.jpg",
+            temperament:  "Loyal"},
+            {
+              id: '2', 
+              name: "Nebelung", 
+              category: "pelolargo",
+              imgUrl: "https://cdn2.thecatapi.com/images/GwRBXx7-w.jpg",
+              temperament:  "Shy"}
+        ]
         const getItem = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(itemsDetails)
@@ -34,10 +45,11 @@ export const ItemDetailContainer = () => {
 <>
         {
            ItemShow  ? (
-                ItemShow.map((ItemShow) =>  (
+               ItemShow.filter(item => item.id === id)
+                .map((ItemShow) =>  (
                 <ItemDetail item={ItemShow} />
              ))
-             ) : <p>cargando productos...</p>
+             ) : <CargandoPromesa>cargando gatitos...</CargandoPromesa>
          }
          </>
     )

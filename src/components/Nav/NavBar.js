@@ -30,7 +30,7 @@ export const NavBar = () => {
   return (
     <Nav>
       <Logo>
-        <img src={logo} className="logo" />
+        <img src={logo} className="logo" alt=""/>
         <p>cat-store</p>
       </Logo>
       <BurgerNav />
